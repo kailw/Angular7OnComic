@@ -1,0 +1,41 @@
+<div class="table-responsive"> 
+<table class="table">
+  <thead class="bg-danger">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">TITULO</th>
+      <th scope="col">DESCRIPCION</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">FECHA_PUBLICACIÓN</th>
+      <th scope="col">PAGINA</th>
+      <th scope="col">COLOR</th>
+      <th scope="col">EXISTENCIAS</th>
+      <th scope="col">PRECIO</th>
+      <th scope="col">DESCUENTO</th>
+      <th scope="col">COLECCIÓN</th>
+      <th scope="col" class="text-center">ACCIONES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of comic.message, index as i" class="table-light">
+      <td>{{c.id}}</td>
+      <td>{{c.titulo}}</td>
+      <td>{{c.desc}}</td>
+      <td>{{c.isbn}}</td>
+      <td>{{c.fechapublicacion}}</td>
+      <td>{{c.pagina}}</td>
+      <td>{{c.color}}</td>
+      <td>{{c.existencias}}</td>
+      <td>{{c.precio}}</td>
+      <td>{{c.descuento}}</td>
+      <td>{{c.obj_coleccion.desc}}</td>
+      <td class="text--center">
+        <button class="btn btn-info mr-2" [routerLink]="['/comic/view/',c.id]" ><i class="fa fa-eye"></i></button>
+        <button class="btn btn-primary mr-2" [routerLink]="['/admin/comic/edit/',c.id]"><i class="fa fa-edit"></i></button>
+        <button class="btn btn-warning mr-2" [routerLink]="['/admin/comic/remove/',c.id]"><i class="fa fa-trash"></i></button>
+      </td>
+    </tr>
+  </tbody>  
+</table>
+</div>
+{{errorMsg}}

@@ -1,0 +1,48 @@
+<div id="header" class="bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light bg-dark">
+        <a class="navbar-brand" [routerLink]="['/']">ONCOMICS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/']">INICIO <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <a class="nav-link" [routerLink]="['/comic/plist']">COMICS <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item dropdown" routerLinkActive="active">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        GÉNERO
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/belico']">Bélico</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/ciencia_ficcion']">Ciencia Ficción</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/erotico']">Erótico</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/fantasia_aventura']">Fantasía y Aventura</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/humor']">Humor</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/infantil']">Infantil</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/serie_negra']">Serie Negra o
+                            Detectivesca</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/sobrenatural']">Sobrenatural y
+                            Paranormal</a>
+                        <a class="dropdown-item" [routerLink]="['/comic/genero/superheroes']">SuperHéroes</a>
+                        <!-- <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a> -->
+                    </div>
+                </li>
+            </ul>
+            <button class="btn btn-outline-info my-2 my-sm-0 mx-2" [routerLink]="['/user/login']" *ngIf="!isLogged" >LOGIN</button>
+            <button class="btn btn-outline-danger my-2 my-sm-0 mx-2" [routerLink]="['/user/logout']" *ngIf="isLogged" (click)="logout()">LOGOUT</button>
+            <form class="form-inline my-2 my-lg-0">                
+                <input class="form-control mr-sm-2 ui-widget" type="search" id="tags" placeholder="Búsqueda" aria-label="Search">
+                <button class="btn btn-outline-success my-1 my-sm-0" type="submit">Búsqueda</button>
+            </form>
+        </div>
+    </nav>
+</div>
